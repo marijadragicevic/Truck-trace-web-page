@@ -9,6 +9,7 @@
   --fontViolet:rgb(29,32,48);
   --grey:rgb(242,242,244);
   --fontGrey:rgb(192,192,192);
+  --white:white;
   --transition: 0.6s ease;
   --padding: 50px 0px;
 }
@@ -35,6 +36,10 @@ h1,h2,h3,h4,h5,h6 {
   width: 90%;
   margin: auto;
 }
+.container1 {
+  width: 80%;
+  margin: auto;
+}
 
 ul{
   list-style-type: none;
@@ -50,27 +55,47 @@ a:hover{
 }
 
 /* NAVBAR */
+nav {
+
+}
 nav .upper{
   background-color: var(--darkViolet);
-  color: white;
+  color: var(--white);
+  padding: 10px 0px;
+}
+nav .upper .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav .upper article:first-child{
+nav .upper .container article:first-child{
  display: flex;
  align-items: center;
  justify-content: center;
- /* vertical-align: middle; */
 }
 
-nav .upper article:first-child span{
+nav .upper .container article:first-child span{
   padding: 0px 15px;
- }
- nav .upper article:first-child .crta{
+}
+ nav .upper .container article:first-child .crta{
   padding: 0px 15px 0px 0px ;
- }
+}
+
+nav .upper .container article:last-child i{
+  padding: 5px;
+}
+nav .upper .container article:last-child i{
+  cursor: pointer;
+}
 
 
-
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav .upper .container {
+    flex-direction: column;
+  }
+}
 
 
 
