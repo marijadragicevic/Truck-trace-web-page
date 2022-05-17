@@ -55,9 +55,7 @@ a:hover{
 }
 
 /* NAVBAR */
-nav {
-
-}
+/* upper */
 nav .upper{
   background-color: var(--darkViolet);
   color: var(--white);
@@ -78,7 +76,7 @@ nav .upper .container article:first-child{
 nav .upper .container article:first-child span{
   padding: 0px 15px;
 }
- nav .upper .container article:first-child .crta{
+nav .upper .container article:first-child .crta{
   padding: 0px 15px 0px 0px ;
 }
 
@@ -89,11 +87,71 @@ nav .upper .container article:last-child i{
   cursor: pointer;
 }
 
+/* navbar */
+nav .navbar{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+nav .navbar h2{
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--orange);
+}
+
+nav .navbar ul{
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  margin:0 auto;
+}
+nav .navbar ul li a, .basket{
+  padding: 5px 10px;
+  color: var(--fontViolet);
+  font-size: 1.3rem;
+  display:flex;
+  align-items: center;
+  height: 100%;
+}
+
+nav .navbar ul li a:hover{
+  background-color: var(--orange);
+  color: var(--white);
+ 
+}
+nav .navbar .dropDown{
+  display: none;
+  font-size: 2rem;
+  color: var(--darkViolet);
+}
+nav .navbar .dropDown:hover{
+  cursor: pointer;
+  color: var(--orange);
+  transition: var(--transition);
+}
 
 /* RESPONSIVE */
 @media(max-width:768px){
   nav .upper .container {
+    justify-content: center;
+  }
+  nav .upper .container article:first-child{
+    display: none;
+  }
+  
+  /* navbar */
+
+  nav .navbar{
+    justify-content: space-between;
+  }
+  nav .navbar .list{
     flex-direction: column;
+    width: 100%;
+  }
+  nav .navbar .dropDown {
+    display: block;
   }
 }
 

@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import { FaEnvelope, FaLinkedinIn, CgFacebook, RiInstagramLine, BsTwitter, BsYoutube, BsTelephoneFill, FaTruck, CgMenu } from "./index";
+import { FaShoppingBasket, FaEnvelope, FaLinkedinIn, CgFacebook, RiInstagramLine, BsTwitter, BsYoutube, BsTelephoneFill, FaTruck, CgMenu } from "./index";
+import { Fade } from "react-awesome-reveal";
 
 const Navbar = () => {
+    const [myStyle, setMyStyle] = useState("flex");
+
+    const handleDropDown = () => {
+        if (myStyle === "flex") {
+            setMyStyle("none");
+        } else {
+            setMyStyle("flex");
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                setMyStyle("flex");
+            }
+        })
+    }, [])
+
     return (
         <nav>
             <div className='upper'>
@@ -12,16 +31,20 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className='container'>
+            <div className='navbar container'  >
                 <h2><FaTruck /> Faster</h2>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/service">Service</Link></li>
-                    <li><Link to="/price">Price</Link></li>
-                    <li><Link to="/blog">Blog</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                </ul>
+                <i className='dropDown' onClick={() => handleDropDown()} ><CgMenu /></i>
+                <Fade duration={500} direction="down">
+                    <ul className='list' style={{ display: `${myStyle}` }}>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/service">Service</Link></li>
+                        <li><Link to="/price">Price</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li ><i className='basket'><FaShoppingBasket /></i></li>
+                    </ul>
+                </Fade>
             </div>
         </nav >);
 
