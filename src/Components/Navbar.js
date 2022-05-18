@@ -34,7 +34,7 @@ const Navbar = () => {
             <div className='navbar container'  >
                 <h2><FaTruck /> Faster</h2>
                 <i className='dropDown' onClick={() => handleDropDown()} ><CgMenu /></i>
-                <Fade duration={500} direction="down">
+                <Fade duration={700} direction="down">
                     <ul className='list' style={{ display: `${myStyle}` }}>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About</Link></li>
