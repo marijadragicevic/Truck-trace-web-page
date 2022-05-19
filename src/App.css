@@ -189,6 +189,76 @@ header article input[type="submit"]:hover{
 
 
 
+/* FOOTER */
+footer{
+  padding: var(--padding);
+  background-color: var(--darkViolet);
+  color: var(--white);
+  padding-bottom: 15px;
+}
+footer .row{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* border-bottom: 1px solid var(--white); */
+}
+footer hr{
+  border-top:0.3px solid var(--white);
+  margin: 30px auto;
+}
+footer .container p:last-child{
+  text-align: center;
+}
+
+footer .row article:last-child{
+  flex: 0 0 40%;
+}
+footer article form{
+  margin: 10px;
+}
+footer article form input{
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 1rem;
+  width: 70%;
+}
+footer article form input:last-child{
+  width: 30%;
+}
+footer article form input[type="submit"] {
+  background-color: var(--orange);
+  color: var(--white);
+}
+footer article form input[type="submit"]:hover{
+  background-color: var(--darkOrange);
+  cursor: pointer;
+}
+
+footer .row article h3{
+  color: var(--orange);
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+footer .row article span{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+footer .row article span i{
+  font-size: 1.5rem;
+  border: 1px solid var(--white);
+  padding: 5px 10px 0px;
+  border-radius: 50%;
+  margin:5px;
+}
+footer .row article span i:hover{
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--darkViolet);
+}
 
 
 
@@ -198,6 +268,7 @@ header article input[type="submit"]:hover{
 
 
 /* RESPONSIVE */
+/* ////////////////////////////////////////// */
 @media(max-width:768px){
   nav .upper .container {
     justify-content: center;
@@ -207,7 +278,6 @@ header article input[type="submit"]:hover{
   }
   
   /* navbar */
-
   nav .navbar{
     justify-content: space-between;
   }
@@ -217,6 +287,11 @@ header article input[type="submit"]:hover{
   }
   nav .navbar .dropDown {
     display: block;
+  }
+
+  /* Footer */
+  footer .row article:last-child,  footer .row article{
+    flex: 0 0 100%;
   }
 }
 
