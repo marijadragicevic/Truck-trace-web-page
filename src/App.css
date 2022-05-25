@@ -157,36 +157,28 @@ header h1 {
   font-weight: 300;
   margin: 5px auto;
 }
-header article {
+header form {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: auto;
 }
-header article input{
+header form input{
   flex: 0 0 80%;
   border: none;
   outline: none;
   padding: 20px 25px;
   font-size: 1.2rem;
 }
-header article input[type="submit"] {
+header form input[type="submit"] {
   background-color: var(--orange);
   color: var(--white);
   flex: 0 0 10%;
 }
-header article input[type="submit"]:hover{
+header form input[type="submit"]:hover{
   background-color: var(--darkOrange);
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
 
 
 /* FOOTER */
@@ -201,11 +193,10 @@ footer .row{
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  /* border-bottom: 1px solid var(--white); */
 }
 footer hr{
   border-top:0.3px solid var(--white);
-  margin: 30px auto;
+  margin: 20px auto;
 }
 footer .container p:last-child{
   text-align: center;
@@ -214,18 +205,17 @@ footer .container p:last-child{
 footer .row article:last-child{
   flex: 0 0 40%;
 }
-footer article form{
-  margin: 10px;
-}
+
 footer article form input{
   border: none;
   outline: none;
   padding: 20px;
   font-size: 1rem;
-  width: 70%;
+  width: 80%;
+  margin: 5px 0px;
 }
 footer article form input:last-child{
-  width: 30%;
+  width: 20%;
 }
 footer article form input[type="submit"] {
   background-color: var(--orange);
@@ -260,6 +250,86 @@ footer .row article span i:hover{
   color: var(--darkViolet);
 }
 
+/* //////////////////////////////////////////////////////////////// */
+/* //////////////////// PAGES ///////////////////////////////////// */
+/* CONTACT */
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: var(--padding);
+}
+.contact article{
+  margin: 10px;
+}
+.contact article h3 {
+  font-size: 2rem;
+  background-color: var(--orange);
+  text-align: center;
+  padding: 10px;
+  font-weight: 300;
+}
+.contact article iframe{
+  width: 400px;
+  height: 450px;
+  border: none;
+}
+.contact article:last-child {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 35%;
+}
+.contact article hgroup h4 {
+  color: var(--orange);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+.contact article hgroup h2 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+.contact article:last-child form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--grey);
+  padding: 20px;
+}
+.contact article:last-child form input,textarea {
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0px;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  color: var(--fontGrey);
+}
+.contact article form input[type="submit"] {
+  background-color: var(--orange);
+  color: var(--white);
+  width: auto;
+  align-self: flex-start;
+  padding:15px;
+}
+.contact  form input[type="submit"]:hover{
+  background-color: var(--darkOrange);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -289,8 +359,44 @@ footer .row article span i:hover{
     display: block;
   }
 
+  /* Header */
+  header{
+    height: 35vh;
+  }
+  header h1{
+    text-align: center;
+    font-size: 3.5rem;
+  }
+  .homeHeader{
+    height: auto;
+  }
+  .homeHeader form{
+    flex-wrap: wrap;
+  }
+  .homeHeader form input:nth-child(1n){
+    font-size: 1.1rem;
+    padding: 15px;
+    margin: 5px;
+  }
+
   /* Footer */
   footer .row article:last-child,  footer .row article{
+    flex: 0 0 100%;
+  }
+  footer article form input:nth-child(1n){
+    font-size: 1.1rem;
+    width: auto;
+    margin: 5px 0px;
+  }
+  /* //////////////////// PAGES ////////////////////////// */
+  /* CONTACT */
+  .contact article{
+    width: 100%;
+  }
+  .contact article iframe{
+    width: 100%;
+  }
+  .contact article:last-child{
     flex: 0 0 100%;
   }
 }
